@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "d15-custom-themes"
+    }
+  },
+  "defaultProject": "d15-custom-themes",
+  "cli": {
+    "analytics": "fa6ddf12-0a86-4012-adf1-b8fe6bac51d5"
+  }
 }
