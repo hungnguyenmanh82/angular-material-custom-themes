@@ -1,4 +1,4 @@
-# D15CustomThemes
+# Custom Themes examples:
 
 [Demo](https://hungnguyenmanh82.github.io/angular-material-custom-themes/)
 
