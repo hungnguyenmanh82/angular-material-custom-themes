@@ -55,12 +55,13 @@ $dark-theme: mat-dark-theme(
   @include angular-material-color($dark-theme);
 }
 
-// cách 2: Apply theme for component
+// cách 2: Apply theme for component. Tất cả child của component đều đc apply theme
 app-child2 {
   @include angular-material-color($dark-theme);
 }
 
 // ==================================== theme for Material component ======================================
+// cách 3: Apply theme for component. Tất cả child của component đều đc apply theme
 app-child3 {
   //jump to @import sccs file ở trên và search cho các functions, variables ở đây thì sẽ hiểu
   // mat-core-theme() sẽ apply tất cả component ở @angular/core module

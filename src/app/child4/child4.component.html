@@ -6,7 +6,16 @@
     dùng @inlude theme vào các class này là ok
   </p>
   <p>chú ý add css class mat-app-background vào div, form, body...</p>
-  <p>radio group: {{ selectedTheme | json }}</p>
+  <p>
+    các custom Theme đều base trên 2 theme chính: Dark-theme và Light-theme
+    <br />
+    cái này liên quan tới battery và khả năng xử lý của mắt với màu nền Dark/light
+    <br />
+    custome theme chủ yếu thay đổi Primary, Accent, warning ở toolbar, button,...
+  </p>
+  <button><span class="material-icons"> accessibility </span></button>
+
+  <p>selectedTheme: {{ selectedTheme | json }}</p>
   <div class="radio-theme-layout">
     <p>
       <label *ngFor="let theme of themes">
@@ -22,7 +31,7 @@
       >
     </p>
   </div>
-  <!-- apply theme here -->
+  <!-- apply theme here: tất cả child của div sẽ đc apply theme -->
   <div
     class="mat-app-background"
     [class.dark-theme]="selectedTheme == themes[0]"
