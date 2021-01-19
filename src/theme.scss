@@ -13,14 +13,14 @@
 //jump to @import sccs file ở trên và search cho các functions, variables ở đây thì sẽ hiểu
 // mat-palette() là function
 // $candy-app-primary: là 1 class đc trả về bởi mat-palette() function
-// $mat-indigo: là dải màu xanh
-$candy-app-primary: mat-palette($mat-indigo);
+// $mat-indigo: là dải màu xanh => https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+$candy-app-primary: mat-palette($mat-indigo); // dùng default ko set màu
 $candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $candy-app-warn: mat-palette($mat-red);
 
-// CSS viết kiểu gì thì cuối cùng nó cũng về dạng {key1:value1; key2: value2}
+// SCSS viết kiểu gì thì cuối cùng compile về dạng CSS cấu trúc {key1:value1; key2: value2}
 $candy-app-theme: mat-light-theme(
   (
     color: (
@@ -32,6 +32,7 @@ $candy-app-theme: mat-light-theme(
 );
 
 // apply default themes for app
+// lưu ý Material theme chỉ có tác dụng với các Material component angular thôi. Ko có tác dụng với các tag chuẩn <div>, <input>...
 @include angular-material-theme($candy-app-theme);
 
 // ==================================== Dark theme ======================================
@@ -49,19 +50,20 @@ $dark-theme: mat-dark-theme(
   )
 );
 
-// Apply themes with a CSS => cuối cùng nó vẫn convert về dạng  .className{key1:value1; key2: value2}
-// cách 1: dùng CSS có thể đổi theme dễ dàng cho toàn project body, component, div
+// SCSS viết kiểu gì thì cuối cùng compile về dạng CSS cấu trúc {key1:value1; key2: value2}
+// cách 1: dùng CSS class có thể đổi theme dễ dàng cho toàn project body, component, div
+// các child của CSS class này sẽ đc apply theme này @include
 .dark-theme {
   @include angular-material-color($dark-theme);
 }
 
-// cách 2: Apply theme for component. Tất cả child của component đều đc apply theme
+// cách 2: Apply theme for component tag. Tất cả child của component đều đc apply theme
 app-child2 {
   @include angular-material-color($dark-theme);
 }
 
 // ==================================== theme for Material component ======================================
-// cách 3: Apply theme for component. Tất cả child của component đều đc apply theme
+// cách 3: Apply theme for component tag. có chỉnh sửa CSS cho các Material component cụ thể
 app-child3 {
   //jump to @import sccs file ở trên và search cho các functions, variables ở đây thì sẽ hiểu
   // mat-core-theme() sẽ apply tất cả component ở @angular/core module
